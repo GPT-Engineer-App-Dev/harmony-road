@@ -1,15 +1,35 @@
-// Complete the Index page component here
-// Use chakra-ui
-import { Button } from "@chakra-ui/react"; // example
-import { FaPlus } from "react-icons/fa"; // example - use react-icons/fa for icons
+import { Box, Text, VStack, Input, Button, Textarea } from '@chakra-ui/react';
+import { FaCalendarAlt, FaInfo, FaMailBulk } from 'react-icons/fa';
 
 const Index = () => {
-  // TODO: Create the website here!
   return (
-    <Button>
-      Hello world! <FaPlus />
-    </Button>
-  ); // example
+    <VStack spacing={10} p={5}>
+      <Box p={5} shadow='md' borderWidth='1px'>
+        <FaCalendarAlt />
+        <Text fontSize='2xl' fontWeight='bold'>Tour Dates</Text>
+        <Text mt={4}>Check out our upcoming tour dates!</Text>
+        {/* List of tour dates would be dynamically generated here */}
+      </Box>
+
+      <Box p={5} shadow='md' borderWidth='1px'>
+        <FaInfo />
+        <Text fontSize='2xl' fontWeight='bold'>Band Bio</Text>
+        <Text mt={4}>Learn more about the band's history and members.</Text>
+        {/* Band bio information would be dynamically generated here */}
+      </Box>
+
+      <Box p={5} shadow='md' borderWidth='1px'>
+        <FaMailBulk />
+        <Text fontSize='2xl' fontWeight='bold'>Contact Us</Text>
+        <VStack spacing={3} mt={4}>
+          <Input placeholder='Your Name' />
+          <Input placeholder='Your Email' />
+          <Textarea placeholder='Your Message' />
+          <Button colorScheme='blue'>Send Message</Button>
+        </VStack>
+      </Box>
+    </VStack>
+  );
 };
 
 export default Index;
